@@ -1,0 +1,9 @@
+streamlit
+sqlalchemy
+psycopg2-binary
+google-generativeai
+pandas
+python-dotenv
+requests
+markdown
+reportlab

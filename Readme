@@ -1,0 +1,55 @@
+DB-ChatBot 💬
+A natural language to SQL chatbot interface using Streamlit and Gemini API.
+Ask questions in plain English — get valid SQL queries, execute them, and view or export the results.
+🔧 Features
+
+- Convert natural language to SQL using Google Gemini (Gemini 2.0 Flash)
+- Execute queries on a connected SQL database
+- View results in a clean, interactive UI
+- Download the chat history as a PDF
+- Maintain session-based chat history with timestamps
+
+🗂️ Project Structure
+
+chat.py              - Main Streamlit chat UI
+chat_history.py      - Manages chat session state
+db_connect.py        - Connects to the SQL database
+query_executer.py    - Executes SQL and fetches schema
+nlp_to_sql.py        - Generates SQL using Gemini AI
+display_result.py    - Displays query results
+pdf_exporter.py      - Converts chat logs to PDF
+.env                 - Stores API keys and DB connection string
+
+⚙️ Setup Instructions
+
+1. Clone the repository
+   git clone https://github.com/yourusername/db-chatbot.git
+   cd db-chatbot
+
+2. Set up a virtual environment (optional but recommended)
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+
+3. Install dependencies
+   pip install -r requirements.txt
+
+4. Configure environment
+   Create a .env file in the root folder and add:
+   DB_URL=your-database-url-here
+   GOOGLE_API_KEY=your-google-api-key-here
+
+5. Run the app
+   streamlit run chat.py
+
+🛡️ .gitignore Reminder
+Your `.env` file must be excluded from Git using `.gitignore` to avoid exposing secrets.
+📄 Sample Prompt
+"Show me the top 5 countries by population"
+
+💬 → SQL → Runs on your database → Shows table → Saves to PDF!
+📦 Future Enhancements (Ideas)
+
+- Multi-table support & schema discovery
+- Authentication layer
+- Chatbot memory and feedback refinement
+- Deployment via Streamlit Cloud / Hugging Face Spaces
